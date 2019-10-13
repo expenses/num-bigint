@@ -1929,6 +1929,12 @@ impl BigUint {
         BigUint::new(slice.to_vec())
     }
 
+    /// Returns a reference to the backing array
+    #[inline]
+    pub fn as_slice(&self) -> &[u32] {
+        &self.data
+    }
+
     /// Assign a value to a `BigUint`.
     ///
     /// The digits are in little-endian base 2<sup>32</sup>.
